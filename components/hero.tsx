@@ -16,7 +16,7 @@ export function Hero() {
     <div className="poster-labels"><div className="eyebrow"><span>01 /</span> THE DIRECTION</div><p>PEOPLE.<br />PROCESS.<br />TECHNOLOGY.</p></div>
     <motion.div className="hero-copy" initial="hidden" animate="visible" variants={{ visible: { transition: { staggerChildren: reduce ? 0 : .08 } } }}>
       {[
-        <h1 id="hero-title" key="title">{profile.role}<br /><span>{profile.direction}.</span></h1>,
+        <h1 id="hero-title" key="title">{profile.role} | <br /><span>{profile.direction}</span></h1>,
         <p className="hero-intro" key="intro">{profile.introduction}</p>,
         <div className="hero-actions" key="actions"><a className="button primary" href="#experience">View Experience <ArrowUpRight size={18} /></a><CVLink /></div>,
       ].map((child, index) => <motion.div className="reveal-element" key={index} variants={{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }} transition={{ duration: reduce ? 0 : .4 }}>{child}</motion.div>)}

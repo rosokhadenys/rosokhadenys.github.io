@@ -1,6 +1,6 @@
 // User-verified professional content. Brackets mark unresolved, non-public details.
 export interface Experience {
-  id: string; company: string; position: string; period: string; description: string;
+  id: string; location?: string; projectLink?: string; company: string; position: string; period: string; description: string;
   overview?: string; scope?: string | string[]; responsibilities?: string[]; impact?: string | string[]; tools?: string | string[]; tags?: string[];
 }
 export interface Project {
@@ -9,13 +9,53 @@ export interface Project {
 }
 export interface WorkflowStep { id: string; title: string; description: string; input: string; process: string; output: string; role: string }
 export const profile = {
-  name: 'Denys Rosokha', initials: 'PM', role: 'Project Manager', direction: 'transitioning into IT',
-  introduction: "Project manager with hands-on experience coordinating teams, stakeholders and operations — now bringing that delivery mindset into digital products and AI-enabled workflows.",
-  overview: "My background is in project delivery, business operations and entrepreneurship.\n\nAcross renewable energy, construction and my own service business, I have coordinated teams, clients, suppliers and subcontractors, managed changing project conditions and built processes that helped work move forward.\n\nWhat consistently interested me most was not the industry itself, but the system behind the work: planning, communication, problem-solving, process improvement and making complex operations easier to manage.\n\nDesigning an AI-supported lead-to-proposal workflow made the next direction clear. I now want to apply that experience in technology teams and continue developing as an IT Project Manager.",
-  tags: ['Project Management', 'AI Automation', 'Operations', 'International Clients'],
-  trajectory: ['Project coordination', 'Operations', 'Entrepreneurship', 'Automation', 'IT Project Management'],
+  "name": "Denys Rosokha",
+  "initials": "PM",
+  "role": "Project Manager",
+  "direction": "Operations & Delivery | AI-enabled Workflows",
+  "introduction": "Founder-minded Project Manager with 2.5+ years of hands-on experience launching, running and scaling operations in fast-growing German businesses — now bringing that ownership mindset, structure and execution speed into digital product teams and AI-enabled workflows.",
+  "overview": "I launch, run and scale operations across renewable energy, construction and climate installation services in Germany. My work connects project planning, resource and capacity planning, stakeholder communication and delivery.\n\nFrom scaling installation crews and building B2B partnerships to coordinating construction delivery and 200+ private orders, I bring an ownership mindset to the full project lifecycle.\n\nI now bring that experience into digital product teams and AI-enabled workflows, supported by completed IT Project Management training and practical work with ChatGPT, Google Sheets and Gmail.",
+  "tags": [
+    "Project Management",
+    "AI Automation",
+    "Operations",
+    "International Clients"
+  ],
+  "trajectory": [
+    "Project coordination",
+    "Operations",
+    "Entrepreneurship",
+    "Automation",
+    "IT Project Management"
+  ],
+  "headline": "Project Manager | Operations & Delivery | AI-enabled Workflows",
+  "stats": [
+    {
+      "value": "1 → 5 crews",
+      "label": "Scaled installation operations from 1 test crew to 5 crews (~10 installers)"
+    },
+    {
+      "value": "3 B2B partners",
+      "label": "Secured cooperation with 3 German solar companies after a successful test period"
+    },
+    {
+      "value": "~€1.5M",
+      "label": "Construction project delivery coordinated with 2 junior PMs, 4 crews (~20 workers) and a technical foreman"
+    },
+    {
+      "value": "200+ orders",
+      "label": "Private installation orders coordinated across 3 German regions"
+    }
+  ]
 };
-export const contact = { email: 'rosokha.denys@gmail.com', linkedin: 'https://www.linkedin.com/in/denys-rosokha-pm/', phone: '+49 160 95470041', cv: '/Denys-Rosokha-CV.pdf', location: 'Frankfurt am Main, Germany', availability: '[Add availability]' };
+export const contact = {
+  "email": "rosokha.denys@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/denys-rosokha-pm/",
+  "phone": "+49 160 95470041",
+  "cv": "/Denys-Rosokha-CV.pdf",
+  "location": "Frankfurt am Main, Germany",
+  "availability": "Open to Project Manager roles in digital product and AI-driven teams in Frankfurt / Rhein-Main and remote."
+};
 export const capabilities = [
   {
     "title": "Project Delivery",
@@ -43,14 +83,14 @@ export const experience: Experience[] = [
     "id": "experience-1",
     "period": "02/2026 — Present",
     "company": "Ryntovt UG",
-    "position": "Founder · Operations & Project Management",
-    "description": "Managing customer projects, subcontractor coordination, supplier workflows and process automation across HVAC and climate installation services.",
+    "position": "Founder | Operations & Project Management",
+    "description": "Founded and run a B2C/B2B climate & HVAC installation business in Germany, owning the end-to-end delivery flow.",
     "tags": [
       "Business Operations",
       "Project Coordination",
       "Process Automation"
     ],
-    "overview": "Founded and operate a small German service business focused on climate equipment, installation projects and subcontractor-based project delivery.",
+    "overview": "Founded and run a B2C/B2B climate & HVAC installation business in Germany; own the end-to-end flow from lead intake and proposal to scheduling, delivery, documentation and customer handover.",
     "scope": [
       "B2C and B2B customer projects across Germany",
       "Network of 3 independent installation crews in 3 German regions",
@@ -58,18 +98,15 @@ export const experience: Experience[] = [
       "Coordination of suppliers, subcontractors, customers and project documentation"
     ],
     "responsibilities": [
-      "Managed incoming customer and B2B project requests from initial assessment through quotation, scheduling and delivery.",
-      "Coordinated equipment and material suppliers, installation partners and customer appointments.",
-      "Recruited and onboarded independent installation crews, including document, insurance, experience and equipment checks.",
-      "Introduced standardized quality controls using photo reports and signed acceptance documentation.",
-      "Personally supported significant B2B projects on site, coordinating subcontractors, materials, working hours and communication with client managers.",
-      "Designed a semi-automated lead-to-proposal workflow using ChatGPT, Google Sheets, Gmail integrations and structured business knowledge."
+      "Founded and run a B2C/B2B climate & HVAC installation business in Germany; own the end-to-end flow from lead intake and proposal to scheduling, delivery, documentation and customer handover.",
+      "Built and manage a distributed network of 3 independent installation crews across 3 German regions; coordinated 200+ private installation orders.",
+      "Manage suppliers and subcontractors: capacity planning, scheduling, dependencies and quality of delivery.",
+      "Designed and implemented a semi-automated lead-to-proposal workflow with ChatGPT, Google Sheets and Gmail."
     ],
     "impact": [
-      "Built a subcontractor network covering 3 German regions.",
-      "Coordinated more than 200 private installation orders.",
-      "Introduced a structured quality and acceptance process for every installation.",
-      "Developed an AI-supported proposal workflow that reduced manual preparation work and supported at least a doubling of monthly sales contracts over approximately 2.5 months."
+      "Built a distributed network of 3 independent installation crews across 3 German regions.",
+      "Coordinated 200+ private installation orders.",
+      "Reduced repetitive proposal preparation and enabled faster sales follow-up."
     ],
     "tools": [
       "ChatGPT",
@@ -80,36 +117,34 @@ export const experience: Experience[] = [
       "Subcontractor Management",
       "Project Scheduling",
       "Quality Control"
-    ]
+    ],
+    "location": "Frankfurt am Main",
+    "projectLink": "#automation"
   },
   {
     "id": "experience-2",
     "period": "08/2025 — 02/2026",
     "company": "Smartbau Technologie GmbH",
-    "position": "Project Management · Construction & Data Center Projects",
-    "description": "Coordinated international project delivery, site operations, reporting and cross-functional teams in complex construction environments.",
+    "position": "Project Manager",
+    "description": "Coordinated construction and data-centre project delivery with 2 junior PMs, 4 crews (~20 site workers) and a technical foreman.",
     "tags": [
       "Project Delivery",
       "Team Coordination",
       "Stakeholders",
       "Reporting"
     ],
-    "overview": "Managed operational project delivery for construction and data-center-related projects, coordinating client communication, planning, site teams, suppliers and project documentation.",
+    "overview": "Drove delivery of a construction project with an overall budget of ~€1.5M, from planning and site preparation through progress tracking and handover.",
     "scope": [
+      "Construction project with an overall budget of ~€1.5M",
       "2 junior Project Managers",
-      "4 crews / approximately 20 site workers",
-      "1 technical foreman",
-      "International client communication in English",
-      "Coordination with planners, suppliers, general contractor teams and other project workstreams"
+      "4 crews (~20 site workers) and a technical foreman",
+      "Coordination with planners, suppliers and external workstreams"
     ],
     "responsibilities": [
-      "Coordinated projects from initial client discussions and preliminary calculations through site execution and handover.",
-      "Organized daily operational planning together with junior PMs and the technical foreman.",
-      "Coordinated deliveries, materials, tools, work permits and site access.",
-      "Managed client communication, project changes, issue reporting and progress documentation.",
-      "Maintained daily progress reporting using measurements, photographs and completed-volume updates.",
-      "Coordinated schedule dependencies with other project teams and external technical stakeholders.",
-      "Supported financial decision-making through estimates, weekly man-hour reporting, delivery documentation and controlled approval of additional costs."
+      "Coordinated project delivery together with 2 junior Project Managers, 4 crews (~20 site workers) and a technical foreman in complex construction and data-centre environments.",
+      "Drove delivery of a construction project with an overall budget of ~€1.5M, from planning and site preparation through progress tracking and handover.",
+      "Single point of contact for the client: communication, deliveries, work permits, change requests and progress reporting; aligned planners, suppliers and external workstreams.",
+      "Ran daily operational planning and resource allocation; supported estimates, man-hour tracking and documentation of additional project costs (change management)."
     ],
     "impact": [
       "Recovered a 4-day schedule delay caused by a technical project conflict by coordinating planners, client representatives, another contractor and additional site resources.",
@@ -128,34 +163,32 @@ export const experience: Experience[] = [
       "Stakeholder Communication",
       "Excel",
       "General Contractor Project Software"
-    ]
+    ],
+    "location": "Frankfurt am Main"
   },
   {
     "id": "experience-3",
     "period": "03/2024 — 07/2025",
     "company": "Renewable Energy Business",
-    "position": "Founding Operations Partner · Project Coordination",
-    "description": "Coordinated installation capacity, B2B partnerships and customer projects across solar and heat-pump operations.",
+    "position": "Founding Operations Partner | Project Coordination",
+    "description": "Supported the launch and growth of solar-system and heat-pump installation operations, scaling from 1 test crew to 5 crews (~10 installers).",
     "tags": [
       "Operations",
       "Client Communication",
       "Scheduling",
       "Team Coordination"
     ],
-    "overview": "Supported the launch and operational growth of a renewable-energy installation business focused on solar systems and heat pumps for private and commercial customers.",
+    "overview": "Part of the founding team: supported the launch and operational growth of an installation business for private and commercial customers.",
     "scope": [
-      "Up to 5 two-person installation crews",
-      "Approximately 10 installers at peak capacity",
-      "Private and commercial customer projects",
-      "Solar projects including commercial installations above 1 MW"
+      "Scaled from 1 test crew to 5 crews (~10 installers)",
+      "3 German solar company partners",
+      "Private and commercial solar-system and heat-pump installation projects",
+      "Commercial solar projects above 1 MW"
     ],
     "responsibilities": [
-      "Developed relationships with German companies providing installation work.",
-      "Managed B2B communication, project intake and installation planning.",
-      "Coordinated crew capacity and project scheduling across the region.",
-      "Supported customer communication and project handover.",
-      "Helped scale operations from a single test crew to 5 active installation crews.",
-      "Led client negotiations and supported project kick-off and final handover for two significant commercial solar projects, while technical execution was led by the operating partner."
+      "Part of the founding team: supported the launch and operational growth of an installation business for private and commercial customers.",
+      "Owned project intake, installation scheduling, crew capacity and customer handovers, scaling operations from 1 test crew to 5 crews (~10 installers).",
+      "Managed B2B communication and secured cooperation with 3 German solar companies after a successful test period; supported commercial solar projects above 1 MW."
     ],
     "impact": [
       "Secured cooperation with 3 German solar companies after a successful initial test period.",
@@ -170,36 +203,33 @@ export const experience: Experience[] = [
       "Installation Coordination",
       "Project Handover",
       "Team Coordination"
-    ]
+    ],
+    "location": "Germany"
   }
 ];
-
 export const projects: Project[] = [
   {
     "id": "automation",
     "category": "AI & AUTOMATION",
     "title": "AI Lead-to-Proposal Automation",
-    "summary": "Designed a semi-automated workflow that transformed incoming customer leads into structured equipment recommendations and ready-to-review commercial proposals.",
+    "summary": "Designed a semi-automated lead-to-proposal workflow that reduced repetitive work and enabled faster proposal preparation and sales follow-up.",
     "tags": [
       "ChatGPT",
       "Google Sheets",
       "Gmail",
-      "Workflow Design"
+      "Workflow design",
+      "Human-in-the-loop"
     ],
-    "challenge": "Preparing customer proposals required significant manual work. Equipment had to be selected against customer requirements, compatibility checked, pricing calculated and a commercial proposal prepared before the sales conversation could continue.\n\nBefore the workflow was introduced, approximately 60% of the salesperson’s working time was spent on equipment selection, calculations and manual proposal preparation.",
+    "challenge": "Manual proposal preparation took time away from sales and slowed down follow-up with new leads.",
     "role": "Designed the end-to-end workflow, defined the business logic, structured the knowledge base and connected the tools required for lead processing, proposal preparation and sales handoff.",
-    "solution": "Built a semi-automated lead-to-proposal process using ChatGPT Projects, Google Sheets, Gmail integrations, structured business knowledge and branded PDF proposal templates.\n\nWorkflow:\n\nCustomer lead\n→ intake form\n→ Google Sheets\n→ ChatGPT\n→ equipment and configuration recommendation\n→ proposal calculation\n→ branded PDF proposal\n→ human approval\n→ Gmail\n→ sales follow-up\n\nThe AI used controlled source material including price lists, compatibility tables, installation tariffs, configuration rules and margin rules.\n\nA human approval step remained mandatory before any proposal was sent to the customer.",
-    "results": "Reduced a significant share of repetitive proposal-preparation work and allowed the salesperson to focus more time on customer communication.\n\nDuring approximately 2.5 months after implementation, monthly sales contracts increased by at least 2×.",
+    "solution": "Designed a semi-automated workflow — leads structured in Google Sheets, proposal drafts generated with ChatGPT, follow-ups sent via Gmail, with human approval before anything goes to the client.",
+    "results": "Less repetitive work, faster proposal preparation and sales follow-up.",
     "technologies": [
-      "ChatGPT Projects",
+      "ChatGPT",
       "Google Sheets",
       "Gmail",
-      "AI Instructions",
-      "Knowledge Base Design",
-      "Workflow Design",
-      "Process Automation",
-      "PDF Proposal Templates",
-      "Human-in-the-loop Approval"
+      "Workflow design",
+      "Human-in-the-loop"
     ]
   },
   {
@@ -254,9 +284,52 @@ export const projects: Project[] = [
 // Requested demonstration sequence. Technical behavior awaits verified project content.
 export const workflowSteps: WorkflowStep[] = ['Lead', 'Intake Form', 'Google Sheets', 'ChatGPT', 'Proposal Calculation', 'PDF Proposal', 'Human Approval', 'Gmail', 'Sales Follow-up'].map(title => ({ id: title.toLowerCase().replaceAll(' ', '-'), title, description: title === 'ChatGPT' ? 'Equipment and configuration recommendation using controlled source material.' : title === 'Human Approval' ? 'Human approval remained mandatory before any proposal was sent to the customer.' : `[Add a short explanation of ${title}.]`, input: title === 'ChatGPT' ? 'Price lists, compatibility tables, installation tariffs, configuration rules and margin rules.' : '[Define the actual input.]', process: title === 'ChatGPT' ? 'Equipment and configuration recommendation before proposal calculation.' : title === 'Human Approval' ? 'Mandatory human approval before sending a proposal to the customer.' : '[Describe the verified processing behavior.]', output: title === 'ChatGPT' ? 'Equipment and configuration recommendation.' : '[Define the actual output.]', role: title === 'Human Approval' ? 'Human-in-the-loop approval before Gmail and sales follow-up.' : '[Explain this stage’s role in the workflow.]' }));
 export const skills = [
-  { title: 'Project Management', items: ['Project Planning', 'Stakeholder Coordination', 'Team Coordination', 'Resource Planning', 'Project Scheduling', 'Change Management', 'Progress Reporting', 'Process Improvement', 'Client Communication', 'Supplier & Subcontractor Coordination'] },
-  { title: 'Tools', items: ['Jira', 'Google Sheets', 'Microsoft Excel', 'Miro', 'Figma', 'Notion', 'Trello', 'GitHub'] },
-  { title: 'AI & Automation', items: ['ChatGPT Projects', 'AI Workflow Design', 'Business Process Automation', 'Knowledge Base Design', 'AI Instructions', 'Google Sheets Integrations', 'Gmail Integrations', 'Human-in-the-loop Workflows', 'Process Optimization'] },
+  {
+    "title": "Project Management",
+    "items": [
+      "Project Planning",
+      "Scheduling",
+      "Resource & Capacity Planning",
+      "Stakeholder Management",
+      "Risk Mitigation",
+      "Change Management",
+      "Budget Tracking",
+      "Progress Reporting"
+    ]
+  },
+  {
+    "title": "Delivery & Ways of Working",
+    "items": [
+      "Agile / Scrum Fundamentals",
+      "SDLC",
+      "Requirements",
+      "Vendor & Partner Management",
+      "Process Improvement"
+    ]
+  },
+  {
+    "title": "Tools",
+    "items": [
+      "Jira",
+      "Google Sheets",
+      "Excel",
+      "Notion",
+      "Trello",
+      "Miro",
+      "Figma",
+      "GitHub",
+      "Gmail"
+    ]
+  },
+  {
+    "title": "AI & Automation",
+    "items": [
+      "ChatGPT (incl. Projects)",
+      "AI Workflow Design",
+      "Prompt-based Automation of Business Processes",
+      "Human-in-the-loop Approval Steps"
+    ]
+  }
 ];
 export interface LearningEntry {
   id: string;
@@ -274,39 +347,76 @@ export interface LearningEntry {
 }
 export const education: LearningEntry[] = [
   {
-    id: 'education-management',
-    title: 'Bachelor’s Degree in Management',
-    subtitle: 'Polish-Ukrainian Joint Programme',
-    organization: 'Interregional Academy of Personnel Management (IAPM) & Wyższa Szkoła Nauk Społecznych i Bezpieczeństwa w Łodzi',
-    location: 'Kharkiv, Ukraine / Łódź, Poland',
-    date: 'Starting October 2026', period: 'Starting 10/2026', chapter: 'NEXT CHAPTER',
-    status: 'Starting October 2026',
-    summary: 'Joint Management programme delivered in cooperation between Ukrainian and Polish higher-education institutions.',
-    tags: ['Management', 'International Programme', 'Poland · Ukraine'],
-    description: 'Polish-Ukrainian joint Bachelor’s programme in Management delivered in cooperation between IAPM and Wyższa Szkoła Nauk Społecznych i Bezpieczeństwa w Łodzi.',
+    "id": "education-management",
+    "title": "Bachelor’s Degree in Management",
+    "subtitle": "Polish-Ukrainian Joint Programme",
+    "organization": "Interregional Academy of Personnel Management (IAPM) & Wyższa Szkoła Nauk Społecznych i Bezpieczeństwa w Łodzi",
+    "location": "Kharkiv, Ukraine / Łódź, Poland",
+    "date": "Starting October 2026",
+    "period": "Starting 10/2026",
+    "chapter": "NEXT CHAPTER",
+    "status": "Enrolled — starting October 2026",
+    "summary": "Joint Management programme delivered in cooperation between Ukrainian and Polish higher-education institutions.",
+    "tags": [
+      "Management",
+      "International Programme",
+      "Poland · Ukraine"
+    ],
+    "description": "Polish-Ukrainian joint Bachelor’s programme in Management delivered in cooperation between IAPM and Wyższa Szkoła Nauk Społecznych i Bezpieczeństwa w Łodzi."
   },
   {
-    id: 'education-pm', title: 'IT Project Management Course', organization: 'PM_ON',
-    date: 'Completed September 2026', period: '09/2026', chapter: 'COMPLETED', status: 'Completed September 2026',
-    summary: 'Practical IT Project Management training focused on digital project delivery, Jira and modern PM workflows.',
-    tags: ['IT Project Management', 'Jira', 'Agile / Scrum', 'SDLC'],
-    description: 'Completed practical training in IT Project Management covering project lifecycle, SDLC, Agile and Scrum, stakeholder management, estimation, budgeting, risk management, Jira, project reporting, requirements and team coordination.',
+    "id": "education-pm",
+    "title": "IT Project Management Course",
+    "organization": "PM_ON",
+    "date": "Completed September 2026",
+    "period": "09/2026",
+    "chapter": "COMPLETED",
+    "status": "Completed September 2026",
+    "summary": "Practical IT Project Management training focused on digital project delivery, Jira and modern PM workflows.",
+    "tags": [
+      "IT Project Management",
+      "Jira",
+      "Agile / Scrum",
+      "SDLC"
+    ],
+    "description": "Project lifecycle, SDLC, Agile & Scrum, requirements, estimation, budgeting, risk management, stakeholder management, Jira, project reporting."
   },
   {
-    id: 'education-goethe', title: 'AWP Programme for International Students', organization: 'Goethe-Universität Frankfurt am Main',
-    date: 'October 2023 — January 2025', period: '10/2023 — 01/2025', chapter: 'COMPLETED',
-    summary: 'University programme including German language studies to C1 level.',
-    tags: ['German C1', 'International Programme', 'Frankfurt'],
-    description: 'German language studies to C1 level.\nUniversity-issued Zeugnis: “mit gutem Erfolg”.',
+    "id": "education-goethe",
+    "title": "AWP Programme for International Students",
+    "organization": "Goethe-Universität Frankfurt am Main",
+    "date": "October 2023 — January 2025",
+    "period": "10/2023 — 01/2025",
+    "chapter": "COMPLETED",
+    "summary": "University programme including German language studies to C1 level.",
+    "tags": [
+      "German C1",
+      "International Programme",
+      "Frankfurt"
+    ],
+    "description": "German language studies to C1 level.\nUniversity-issued Zeugnis: “mit gutem Erfolg”."
   },
   {
-    id: 'education-secondary', title: 'Secondary Education', organization: 'University Lyceum of V. N. Karazin Kharkiv National University',
-    date: 'Completed May 2023', period: 'Completed 05/2023', chapter: 'FOUNDATION', location: 'Kharkiv, Ukraine',
-    summary: 'Secondary education completed at the University Lyceum of V. N. Karazin Kharkiv National University.',
-    tags: ['Secondary Education', 'Kharkiv'],
-  },
+    "id": "education-secondary",
+    "title": "Secondary Education",
+    "organization": "University Lyceum of V. N. Karazin Kharkiv National University",
+    "date": "Completed May 2023",
+    "period": "Completed 05/2023",
+    "chapter": "FOUNDATION",
+    "location": "Kharkiv, Ukraine",
+    "summary": "Secondary education completed at the University Lyceum of V. N. Karazin Kharkiv National University.",
+    "tags": [
+      "Secondary Education",
+      "Kharkiv"
+    ]
+  }
 ];
-export const languages = ['German — C1', 'English — B2', 'Ukrainian — Native', 'Russian — Native'];
+export const languages = [
+  "German — C1",
+  "English — B2, professional working proficiency",
+  "Ukrainian — native",
+  "Russian — native"
+];
 export const portfolio = { profile, contact, capabilities, experience, projects, workflowSteps, skills, education, languages };
 
 // Presentation labels use only the supplied case-study facts; original narratives remain intact.

@@ -30,8 +30,8 @@ export function CaseStudyContent({ project }: { project: Project }) {
   const tools = Array.isArray(project.technologies) ? project.technologies : [project.technologies];
   return <div className="case-editorial">
     <div className="case-context">
-      <section className="case-section"><h4>Challenge</h4><Narrative project={project} section="challenge" /></section>
-      <section className="case-section"><h4>My Role</h4><Narrative project={project} section="role" /></section>
+      <section className="case-section"><h4>{project.id === 'automation' ? 'Problem' : 'Challenge'}</h4><Narrative project={project} section="challenge" /></section>
+      {project.id !== 'automation' && <section className="case-section"><h4>My Role</h4><Narrative project={project} section="role" /></section>}
     </div>
     <div className="case-response">
       <section className="case-section"><h4>Solution</h4><Narrative project={project} section="solution" /></section>
