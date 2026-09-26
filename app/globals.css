@@ -153,3 +153,7 @@
 .floating-contact[data-side="left"] .contact-launcher-tooltip::after{left:auto;right:100%}
 .contact-launcher:hover+.contact-launcher-tooltip,.contact-launcher:focus-visible+.contact-launcher-tooltip,.contact-launcher-tooltip:hover{display:block}
 @media(max-width:650px){.floating-contact{width:48px;height:48px}.floating-contact::before{padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right));padding-top:max(20px,env(safe-area-inset-top));padding-bottom:calc(20px + env(safe-area-inset-bottom))}.floating-contact .contact-launcher{width:48px;height:48px}.floating-contact-options{left:calc(48px - 172px)}.contact-launcher-tooltip{top:24px}}
+
+.education-languages{margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.education-languages h3{font-size:16px;letter-spacing:0}
+.education-languages ul{display:flex;flex-wrap:wrap;gap:8px 28px;list-style:none;padding:0;margin:14px 0 0;font-size:13px}

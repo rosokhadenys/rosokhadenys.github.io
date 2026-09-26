@@ -15,7 +15,7 @@ export const profile = {
   tags: ['Project Management', 'AI Automation', 'Operations', 'International Clients'],
   trajectory: ['Project coordination', 'Operations', 'Entrepreneurship', 'Automation', 'IT Project Management'],
 };
-export const contact = { email: 'rosokha.denys@gmail.com', linkedin: 'https://www.linkedin.com/in/denys-rosokha-pm/', phone: '+49 160 95470041', cv: null as string | null, location: 'Frankfurt am Main, Germany', availability: '[Add availability]' };
+export const contact = { email: 'rosokha.denys@gmail.com', linkedin: 'https://www.linkedin.com/in/denys-rosokha-pm/', phone: '+49 160 95470041', cv: '/Denys-Rosokha-CV.pdf', location: 'Frankfurt am Main, Germany', availability: '[Add availability]' };
 export const capabilities = [
   {
     "title": "Project Delivery",
@@ -259,21 +259,55 @@ export const skills = [
   { title: 'AI & Automation', items: ['ChatGPT Projects', 'AI Workflow Design', 'Business Process Automation', 'Knowledge Base Design', 'AI Instructions', 'Google Sheets Integrations', 'Gmail Integrations', 'Human-in-the-loop Workflows', 'Process Optimization'] },
 ];
 export interface LearningEntry {
+  id: string;
   title: string;
+  subtitle?: string;
+  date: string;
+  period: string;
+  chapter: string;
   organization: string;
+  summary: string;
+  tags: string[];
   description?: string;
   location?: string;
   status?: string;
 }
 export const education: LearningEntry[] = [
-  { title: 'AWP Programme for International Students', organization: 'Goethe-Universität Frankfurt am Main', description: 'German language studies to C1 level.\nUniversity-issued Zeugnis: “mit gutem Erfolg”.' },
-  { title: 'Secondary Education', organization: 'University Lyceum of V. N. Karazin Kharkiv National University', location: 'Kharkiv, Ukraine' },
-];
-export const certifications: LearningEntry[] = [
-  { title: 'IT Project Management Course', organization: 'PM_ON', status: 'In progress', description: 'Focused training in IT Project Management covering project lifecycle, SDLC, Agile and Scrum, stakeholder management, estimation, budgeting, risk management, Jira, project reporting, requirements, team coordination and digital product delivery.' },
+  {
+    id: 'education-management',
+    title: 'Bachelor’s Degree in Management',
+    subtitle: 'Polish-Ukrainian Joint Programme',
+    organization: 'Interregional Academy of Personnel Management (IAPM) & Wyższa Szkoła Nauk Społecznych i Bezpieczeństwa w Łodzi',
+    location: 'Kharkiv, Ukraine / Łódź, Poland',
+    date: 'Starting October 2026', period: 'Starting 10/2026', chapter: 'NEXT CHAPTER',
+    status: 'Starting October 2026',
+    summary: 'Joint Management programme delivered in cooperation between Ukrainian and Polish higher-education institutions.',
+    tags: ['Management', 'International Programme', 'Poland · Ukraine'],
+    description: 'Polish-Ukrainian joint Bachelor’s programme in Management delivered in cooperation between IAPM and Wyższa Szkoła Nauk Społecznych i Bezpieczeństwa w Łodzi.',
+  },
+  {
+    id: 'education-pm', title: 'IT Project Management Course', organization: 'PM_ON',
+    date: 'Completed September 2026', period: '09/2026', chapter: 'COMPLETED', status: 'Completed September 2026',
+    summary: 'Practical IT Project Management training focused on digital project delivery, Jira and modern PM workflows.',
+    tags: ['IT Project Management', 'Jira', 'Agile / Scrum', 'SDLC'],
+    description: 'Completed practical training in IT Project Management covering project lifecycle, SDLC, Agile and Scrum, stakeholder management, estimation, budgeting, risk management, Jira, project reporting, requirements and team coordination.',
+  },
+  {
+    id: 'education-goethe', title: 'AWP Programme for International Students', organization: 'Goethe-Universität Frankfurt am Main',
+    date: 'October 2023 — January 2025', period: '10/2023 — 01/2025', chapter: 'COMPLETED',
+    summary: 'University programme including German language studies to C1 level.',
+    tags: ['German C1', 'International Programme', 'Frankfurt'],
+    description: 'German language studies to C1 level.\nUniversity-issued Zeugnis: “mit gutem Erfolg”.',
+  },
+  {
+    id: 'education-secondary', title: 'Secondary Education', organization: 'University Lyceum of V. N. Karazin Kharkiv National University',
+    date: 'Completed May 2023', period: 'Completed 05/2023', chapter: 'FOUNDATION', location: 'Kharkiv, Ukraine',
+    summary: 'Secondary education completed at the University Lyceum of V. N. Karazin Kharkiv National University.',
+    tags: ['Secondary Education', 'Kharkiv'],
+  },
 ];
 export const languages = ['German — C1', 'English — B2', 'Ukrainian — Native', 'Russian — Native'];
-export const portfolio = { profile, contact, capabilities, experience, projects, workflowSteps, skills, education, certifications, languages };
+export const portfolio = { profile, contact, capabilities, experience, projects, workflowSteps, skills, education, languages };
 
 // Presentation labels use only the supplied case-study facts; original narratives remain intact.
 export const caseStudyPresentation: Record<string, {

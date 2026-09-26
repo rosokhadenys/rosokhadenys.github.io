@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, X, Command } from 'lucide-react';
 import { CVLink } from './ui';
-const links = ['About', 'Experience', 'Projects', 'Skills', 'Contact'];
+const links = ['About', 'Experience', 'Projects', 'Skills', 'Education', 'Contact'];
 export function FloatingNav() {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);

@@ -16,6 +16,6 @@ export function SectionIntro({ number, label, title, description }: { number: st
   return <div className="section-intro"><div><div className="eyebrow"><span>{number} /</span> {label}</div><h2>{title}</h2></div>{description && <p>{description}</p>}</div>;
 }
 export function CVLink({ compact = false }: { compact?: boolean }) {
-  return contact.cv ? <a className={`button secondary ${compact ? 'compact' : ''}`} href={publicAsset(contact.cv)} download>Download CV <Download size={16} /></a> : <span className="cv-unavailable"><button className={`button secondary ${compact ? 'compact' : ''}`} disabled>Download CV <Download size={16} /></button><small>CV coming soon</small></span>;
+  return contact.cv ? <a className={`button secondary ${compact ? 'compact' : ''}`} href={publicAsset(contact.cv)} download="Denys-Rosokha-CV.pdf">Download CV <Download size={16} /></a> : <span className="cv-unavailable"><button className={`button secondary ${compact ? 'compact' : ''}`} disabled>Download CV <Download size={16} /></button><small>CV coming soon</small></span>;
 }
 export function Tags({ items }: { items: string[] }) { return <div className="tags">{items.map(item => <span key={item}>{item}</span>)}</div>; }
