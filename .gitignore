@@ -1,0 +1,12 @@
+node_modules
+.next
+*.tsbuildinfo
+.env*
+
+# Static exports and local verification artifacts
+/out/
+.DS_Store
+*.log
+/*.png
+/playwright-report/
+/test-results/
