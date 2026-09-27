@@ -367,7 +367,7 @@ export const education: LearningEntry[] = [
   {
     "id": "education-pm",
     "title": "IT Project Management Course",
-    "organization": "PM_ON",
+    "organization": "Wow PM",
     "date": "Completed September 2026",
     "period": "09/2026",
     "chapter": "COMPLETED",
