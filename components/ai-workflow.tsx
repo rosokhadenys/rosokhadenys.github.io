@@ -7,7 +7,7 @@ import { CaseStudy } from './projects';
 import { Reveal, SectionIntro } from './ui';
 
 const icons = [UserRound, ClipboardList, Table2, Sparkles, Calculator, FileText, ShieldCheck, Mail, Send];
-const STAGE_DURATION = 5000;
+const STAGE_DURATION = 2500;
 const stageExcerpts = [
   'lead processing',
   'structured the knowledge base',
