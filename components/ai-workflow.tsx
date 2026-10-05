@@ -7,7 +7,18 @@ import { CaseStudy } from './projects';
 import { Reveal, SectionIntro } from './ui';
 
 const icons = [UserRound, ClipboardList, Table2, Sparkles, Calculator, FileText, ShieldCheck, Mail, Send];
-const STAGE_DURATION = 1050;
+const STAGE_DURATION = 5000;
+const stageExcerpts = [
+  'lead processing',
+  'structured the knowledge base',
+  'leads structured in Google Sheets',
+  '',
+  'Equipment and configuration recommendation before proposal calculation.',
+  'proposal preparation',
+  '',
+  'follow-ups sent via Gmail, with human approval before anything goes to the client.',
+  'Less repetitive work, faster proposal preparation and sales follow-up.',
+];
 interface Connection { path: string }
 // Unprovided detail stays editable in the data layer, never in the public UI.
 const isProvided = (value: string) => !!value.trim() && !/\[[^\]]+\]/.test(value);
@@ -54,7 +65,6 @@ function useConnections() {
 
 export function AIWorkflow() {
   const [active, setActive] = useState(0);
-  const [dismissedTooltip, setDismissedTooltip] = useState<string | null>(null);
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
   const [run, setRun] = useState(0);
@@ -76,6 +86,8 @@ export function AIWorkflow() {
     else if (paused) { setPlaying(true); setPaused(false); }
     else restart();
   }
+  const detailPanel = useRef<HTMLDivElement>(null);
+  useEffect(() => { if (detailPanel.current) detailPanel.current.scrollTop = 0; }, [active]);
   const step = workflowSteps[active];
   return <section id="automation" className="automation-section"><div className="shell"><Reveal>
     <SectionIntro number="04" label="SYSTEMS IN MOTION" title="One lead. A connected journey." description="An interactive workflow concept. Select a stage or follow the sequence." />
@@ -84,6 +96,7 @@ export function AIWorkflow() {
         <button className="button primary" onClick={togglePlayback}>{playing ? <Pause size={15} /> : <Play size={15} />}{playing ? 'Pause' : 'Play Workflow'}</button>
         <button className="icon-button" aria-label="Restart workflow" onClick={restart}><RotateCcw size={18} /></button>
       </div></div>
+      <div className="workflow-workspace">
       <div className="workflow-nodes" ref={graph}>
         <svg className="workflow-connections" aria-hidden="true">
           {connections.map(({ path }, i) => <g key={i} data-connection={i}>
@@ -93,17 +106,20 @@ export function AIWorkflow() {
         </svg>
         {workflowSteps.map((node, i) => {
           const Icon = icons[i];
-          return <div className={`workflow-slot ${node.id === 'chatgpt' ? 'processing-center' : ''} ${node.id === 'human-approval' ? 'human-control' : ''} ${i === active ? 'active' : ''} ${i < active ? 'complete' : ''}`} key={node.id} onMouseEnter={() => setDismissedTooltip(null)} onFocus={() => setDismissedTooltip(null)} onKeyDown={event => { if (event.key === 'Escape') setDismissedTooltip(node.id); }}>
-            <button className="workflow-node" aria-pressed={active === i} aria-describedby={isProvided(node.description) ? `tooltip-${node.id}` : undefined} onClick={() => { setPlaying(false); setPaused(false); setActive(i); }}>
+          return <div className={`workflow-slot ${node.id === 'chatgpt' ? 'processing-center' : ''} ${node.id === 'human-approval' ? 'human-control' : ''} ${i === active ? 'active' : ''} ${i < active ? 'complete' : ''}`} key={node.id}>
+            <button className="workflow-node" aria-pressed={active === i} aria-controls="workflow-stage" onClick={() => { setPlaying(false); setPaused(false); setActive(i); }}>
               <span className="node-number">{String(i + 1).padStart(2, '0')}</span><Icon size={23} strokeWidth={1.5} /><strong>{node.title}</strong>
             </button>
-            {isProvided(node.description) && <div className={`node-tooltip ${dismissedTooltip === node.id ? 'tooltip-dismissed' : ''}`} role="tooltip" id={`tooltip-${node.id}`}><strong>{node.title}</strong><span>{node.description}</span></div>}
+
           </div>;
         })}
       </div>
-      <div className="workflow-details" aria-live="polite" aria-atomic="true">
-        <div className="workflow-detail-heading"><span className="eyebrow">STAGE {String(active + 1).padStart(2, '0')} / 09</span><h3>{step.title}</h3>{isProvided(step.description) && <p>{step.description}</p>}</div>
+      <div className="workflow-details" ref={detailPanel} id="workflow-stage" aria-live="polite" aria-atomic="true">
+        <motion.div key={step.id} initial={{ opacity: reduce ? 1 : 0, y: reduce ? 0 : 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .25 }}>
+        <div className="workflow-detail-heading"><span className="eyebrow">STAGE {String(active + 1).padStart(2, '0')} / 09</span><h3>{step.title}</h3><p>{isProvided(step.description) ? step.description : stageExcerpts[active]}</p></div>
         <div className="detail-grid">{[['Input', step.input], ['Process', step.process], ['Output', step.output], ['Role in workflow', step.role]].filter(([, text]) => isProvided(text)).map(([label, text]) => <div key={label}><h4>{label}</h4><p>{text}</p></div>)}</div>
+        </motion.div>
+      </div>
       </div>
       <p className="workflow-note">Interactive demonstration of the documented workflow.</p>
     </div>
