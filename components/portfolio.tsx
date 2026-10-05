@@ -1,8 +1,7 @@
 'use client';
-import { useState } from 'react';
 import { MotionConfig } from 'motion/react';
 import { Hero } from './hero';
-import { ArrowRight, ArrowUpRight, BriefcaseBusiness, Users, Layers3, Sparkles, Plus, Minus, Mail, Linkedin, MessageCircle } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Mail, Linkedin, MessageCircle } from 'lucide-react';
 import { portfolio as p } from '@/data/portfolio';
 import { FloatingNav } from './floating-nav';
 import { FloatingContact } from './floating-contact';
@@ -10,17 +9,27 @@ import { CareerTimeline } from './career-timeline';
 import { EducationTimeline } from './education-timeline';
 import { ProjectGrid } from './projects';
 import { AIWorkflow } from './ai-workflow';
-import { CVLink, Expand, Reveal, SectionIntro } from './ui';
+import { CVLink, Reveal, SectionIntro } from './ui';
 function About() {
-  const [selected, setSelected] = useState<number | null>(null);
-  const paragraphs = p.profile.overview.split('\n\n');
-  return <section id="about" className="section shell">
-    <Reveal><SectionIntro number="01" label="THE DIRECTION" title="From operations to a digital future." /></Reveal>
-    <Reveal className="about-opening"><p className="about-copy">{paragraphs[0]}</p></Reveal>
-    <div className="content-stats">{p.profile.stats.map(stat => <Reveal key={stat.value}><strong>{stat.value}</strong><p>{stat.label}</p></Reveal>)}</div>
-    <div className="about-grid"><div className="about-story">{paragraphs.slice(1).map(paragraph => <Reveal key={paragraph}><p className="about-copy">{paragraph}</p></Reveal>)}</div>
-      <Reveal className="capabilities">{p.capabilities.map((capability, i) => { const Icon = [BriefcaseBusiness, Users, Layers3, Sparkles][i]; return <div className="capability" key={capability.title}><button aria-expanded={selected === i} aria-controls={`capability-${i}`} onClick={() => setSelected(selected === i ? null : i)}><Icon size={21} strokeWidth={1.5} /><span><strong>{capability.title}</strong><small>{capability.summary}</small></span>{selected === i ? <Minus size={17} /> : <Plus size={17} />}</button><Expand open={selected === i} id={`capability-${i}`}><p>{capability.detail}</p></Expand></div>; })}</Reveal>
+  const cases = [
+    { ...p.profile.stats[0], href: '#experience-3' },
+    { ...p.profile.stats[1], href: '#experience-3' },
+    { ...p.profile.stats[2], href: '#experience-2' },
+    { ...p.profile.stats[3], href: '#project-operations' },
+  ];
+  return <section id="about" className="section shell about-bridge" aria-labelledby="about-title">
+    <Reveal duration={.35} distance={10}><div className="eyebrow"><span>01 /</span> THE DIRECTION</div></Reveal>
+    <div className="bridge-intro">
+      <Reveal duration={.35} distance={10}><h2 id="about-title">Built in operations.<br /><span>Ready for digital delivery.</span></h2></Reveal>
+      <div className="bridge-copy">
+        <Reveal duration={.35} distance={10} delay={.1}><p>I’ve built businesses, coordinated teams and kept complex projects moving — with ownership from the first customer conversation to delivery.</p></Reveal>
+        <Reveal duration={.35} distance={10} delay={.18}><p className="bridge-next">Now I bring that hands-on experience into digital projects and practical AI-enabled workflows.</p></Reveal>
+      </div>
     </div>
+    <div className="bridge-cases">{cases.map((item, i) => <Reveal key={item.value} className="bridge-case-wrap" duration={.35} distance={10}>
+      <a className="bridge-case" href={item.href}><span className="bridge-case-number">0{i + 1} / 04 <ArrowUpRight size={18} /></span><strong>{item.value}</strong><p>{item.label}</p></a>
+    </Reveal>)}</div>
+    <Reveal className="bridge-cta" duration={.35} distance={10}><a href="#experience">Explore my experience <ArrowRight size={18} /></a></Reveal>
   </section>;
 }
 function SkillsAndEducation() {

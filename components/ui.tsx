@@ -4,9 +4,9 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { Download } from 'lucide-react';
 import { contact } from '@/data/portfolio';
 import { publicAsset } from '@/lib/public-asset';
-export function Reveal({ children, className = '' }: { children: ReactNode; className?: string }) {
+export function Reveal({ children, className = '', delay = 0, duration = .45, distance = 16 }: { children: ReactNode; className?: string; delay?: number; duration?: number; distance?: number }) {
   const reduce = useReducedMotion();
-  return <motion.div className={`reveal-element ${className}`} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .08 }} transition={{ duration: reduce ? 0 : .45 }}>{children}</motion.div>;
+  return <motion.div className={`reveal-element ${className}`} initial={{ opacity: reduce ? 1 : 0, y: reduce ? 0 : distance }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .08 }} transition={{ duration: reduce ? 0 : duration, delay: reduce ? 0 : delay }}>{children}</motion.div>;
 }
 export function Expand({ open, id, children }: { open: boolean; id: string; children: ReactNode }) {
   const reduce = useReducedMotion();
